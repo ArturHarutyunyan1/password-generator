@@ -62,7 +62,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: auto;
+    margin: 5px auto;
 }
 
 
@@ -73,7 +73,7 @@ body{
     background: var(--card-bg);
 }
 
-.item h2{
+.item h3{
     color: var(--white);
 }
 
@@ -87,13 +87,27 @@ body{
 }
 
 .slider{
-    background: linear-gradient(to right, #a3ffaf 0%, #a3ffaf 0%, #fff 0%, #fff 100%);
+    background: linear-gradient(to right, #a3ffaf 0%, #a3ffaf 0%, #08070be6 0%, #08070be6 100%);
     border-radius: 8px;
     height: 7px;
     width: 100%;
     outline: none;
     transition: background 450ms ease-in;
     -webkit-appearance: none;
+}
+
+.col{
+    width: 90%;
+    margin: auto;
+}
+
+.inline{
+    display: flex;
+    align-items: center;
+}
+
+.inline .item{
+    margin: 5px 5px;
 }
 
 .slider::-webkit-slider-thumb{
@@ -120,4 +134,65 @@ body{
 
 .slider::-webkit-slider-thumb:active{
     cursor: grabbing;
+}
+
+label{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: -10px -5px;
+}
+
+label input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background: #eee;
+}
+
+label:hover input ~ .checkmark{
+    background: #ccc;
+}
+
+label input:checked ~ .checkmark{
+    background: var(--green);
+}
+
+.checkmark::after{
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+label input:checked ~ .checkmark::after{
+    display: block;
+}
+
+label .checkmark::after{
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--main-bg);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

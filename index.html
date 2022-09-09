@@ -5,10 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="card">
+            <div class="result">
+                <div class="space-btw">
+                    <div class="item">
+                        <h2 class="password">01234567890123456789</h2>
+                    </div>
+                    <div class="item">
+                        <button class="copy-btn">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="options">
+                <div class="space-btw">
+                    <div class="item">
+                        <h2>Character Length</h2>
+                    </div>
+                    <div class="item">
+                        <h2 class="value">0</h2>
+                    </div>
+                </div>
+                <div class="progress">
+                    <input type="range" value="0" min="0" max="20" step="1" autocomplete="off" class="slider">
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

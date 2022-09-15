@@ -9,8 +9,6 @@ let lowerCase = false
 let numbers   = false
 let symbols   = false
 
-let chars    = ''
-let password = ''
 slider.addEventListener('input', sliderFunction)
 generator.addEventListener('click', passwordGenerator)
 
@@ -34,7 +32,8 @@ flags.forEach(flag => {
 
 function passwordGenerator(){
     let length = slider.value
-
+    let chars    = ''
+    let password = ''
     flags.forEach(flag => {
         let id = flag.id
         
@@ -48,7 +47,7 @@ function passwordGenerator(){
             if(id == 'numbers'){
                 numbers = true
             }
-            if(id == symbols){
+            if(id == 'symbols'){
                 symbols = true
             }
         }else{
@@ -61,7 +60,7 @@ function passwordGenerator(){
             if(id == 'numbers'){
                 numbers = false
             }
-            if(id == symbols){
+            if(id == 'symbols'){
                 symbols = false
             }
         }
@@ -86,9 +85,4 @@ function passwordGenerator(){
     }
 
     result.textContent = password
-    
-    upperCase = false
-    lowerCase = false
-    numbers   = false
-    symbols   = false
 }

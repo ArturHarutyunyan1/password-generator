@@ -2,6 +2,7 @@ const result         = document.querySelector('.password')
 const slider         = document.querySelector('.slider')
 const passwordLength = document.querySelector('.value')
 const generator      = document.querySelector('.generator-btn') 
+const copyBtn        = document.querySelector('.copy-btn')
 const flags          = document.querySelectorAll('.flag')
 
 let upperCase = false
@@ -10,8 +11,8 @@ let numbers   = false
 let symbols   = false
 
 slider.addEventListener('input', sliderFunction)
-generator.addEventListener('click', passwordGenerator)
-
+generator.addEventListener('click', generatePassword)
+copyBtn.addEventListener('click', copyPassword)
 function sliderFunction(e){
     let value = e.target.value
     passwordLength.textContent = value
@@ -30,7 +31,7 @@ flags.forEach(flag => {
     })
 })
 
-function passwordGenerator(){
+function generatePassword(){
     let length = slider.value
     let chars    = ''
     let password = ''
@@ -85,4 +86,10 @@ function passwordGenerator(){
     }
 
     result.textContent = password
+}
+
+function copyPassword(){
+    let password = result.textContent
+
+    navigator.clipboard.writeText(password)
 }

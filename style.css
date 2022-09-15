@@ -224,3 +224,10 @@ label .checkmark::after{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+@media (max-width: 500px){
+    .card{
+        width: 100%;
+        height: 100%;
+    }
+}
